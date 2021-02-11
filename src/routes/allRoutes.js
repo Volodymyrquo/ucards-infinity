@@ -10,8 +10,27 @@ import ForgetPwd from "../pages/Authentication/ForgetPassword"
 // Dashboard
 import Dashboard from "../pages/Dashboard/index"
 
+//Pages
+import Cards from "../pages/Cards/Cards"
+import Contacts from "../pages/Contacts/Contacts"
+import Currencies from "../pages/Currencies/Currencies"
+import Requisites from "../pages/Requisites/Requisites"
+import Tariffs from "../pages/Tariffs/Tariffs"
+import Users from "../pages/Users/Users"
+import CardTypes from "../pages/CardsTypes/CardsTypes"
+import CryptoWallet from "../pages/Crypto/CryptoWallet/crypto-wallet"
+
 const userRoutes = [
   { path: "/dashboard", component: Dashboard },
+  //Pages
+  { path: "/cards", component: Cards },
+  { path: "/contacts", component: Contacts },
+  { path: "/currencies", component: Currencies },
+  { path: "/requisites", component: Requisites },
+  { path: "/tariffs", component: Tariffs },
+  { path: "/users", component: Users },
+  { path: "/cardtypes", component: CardTypes },
+  { path: "/crypto-wallet", component: CryptoWallet },
 
   // this route should be at the end of all other routes
   { path: "/", exact: true, component: () => <Redirect to="/dashboard" /> },

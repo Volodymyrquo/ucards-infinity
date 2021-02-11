@@ -121,7 +121,7 @@ const Header = props => {
             </div>
             <div className="dropdown d-inline-block">
               <button className="btn header-item noti-icon waves-effect">
-                <i className="bx bx-list-ul " />
+                <i className="bx bx-list-ul" />
               </button>
             </div>
             <div className="dropdown d-inline-block">

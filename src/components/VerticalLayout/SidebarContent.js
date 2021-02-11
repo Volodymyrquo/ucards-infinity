@@ -81,39 +81,39 @@ const SidebarContent = props => {
           </li>
 
           <li>
-            <Link to="#" className=" waves-effect">
+            <Link to="/cardtypes" className=" waves-effect">
               <i className="bx bx-credit-card"></i>
               <span>{props.t("Cards Types")}</span>
             </Link>
           </li>
 
           <li>
-            <Link to="#" className="waves-effect">
+            <Link to="/cards" className="waves-effect">
               <i className="bx bx-credit-card"></i>
               <span>{props.t("Cards")}</span>
             </Link>
           </li>
           <li>
-            <Link to="#" className="waves-effect">
+            <Link to="contacts" className="waves-effect">
               <i className="bx bxs-contact"></i>
               <span>{props.t("Contacts")}</span>
             </Link>
           </li>
           <li>
-            <Link to="#" className="waves-effect">
+            <Link to="/currencies" className="waves-effect">
               <i className="bx bx-money"></i>
               <span>{props.t("Currencies")}</span>
             </Link>
           </li>
 
           <li>
-            <Link to="/#" className="has-arrow waves-effect">
+            <Link to="#" className="has-arrow waves-effect">
               <i className="bx bx-transfer-alt"></i>
               <span>{props.t("Operations")}</span>
             </Link>
             <ul className="sub-menu" aria-expanded="false">
               <li>
-                <Link to="#">{props.t("Types")}</Link>
+                <Link to="/types">{props.t("Types")}</Link>
               </li>
               <li>
                 <Link to="#">{props.t("For Users")}</Link>
@@ -124,21 +124,27 @@ const SidebarContent = props => {
             </ul>
           </li>
           <li>
-            <Link to="#" className="waves-effect">
+            <Link to="/requisites" className="waves-effect">
               <i className="bx bx-list-ul"></i>
               <span>{props.t("Requisites")}</span>
             </Link>
           </li>
           <li>
-            <Link to="#" className="waves-effect">
+            <Link to="/tariffs" className="waves-effect">
               <i className="bx bx-food-menu"></i>
               <span>{props.t("Tariffs")}</span>
             </Link>
           </li>
           <li>
-            <Link to="#" className="waves-effect">
+            <Link to="/users" className="waves-effect">
               <i className="bx bx-user"></i>
               <span>{props.t("Users")}</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/crypto-wallet" className="waves-effect">
+              <i className="bx bx-user"></i>
+              <span>{props.t("Crypto")}</span>
             </Link>
           </li>
         </ul>
