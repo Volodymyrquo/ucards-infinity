@@ -111,7 +111,22 @@ const Header = props => {
             >
               <i className="fa fa-fw fa-bars" />
             </button>
+            <Link
+              to="/"
+              className="align-self-center ont-size-16 px-3 "
+              style={{ color: "rgba(77,77,91,0.7)" }}
+            >
+              <span>Dashboard</span>
+            </Link>
+            <Link
+              to="/users"
+              className="align-self-center ont-size-16 px-3 "
+              style={{ color: "rgba(77,77,91,0.7)" }}
+            >
+              <span>Users</span>
+            </Link>
           </div>
+
           <div className="d-flex">
             <div className="dropdown d-inline-block">
               <button className="btn header-item noti-icon waves-effect">
