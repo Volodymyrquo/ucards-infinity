@@ -125,6 +125,13 @@ const Header = props => {
             >
               <span>Users</span>
             </Link>
+            <Link
+              to="/auth"
+              className="align-self-center ont-size-16 px-3 "
+              style={{ color: "rgba(77,77,91,0.7)" }}
+            >
+              <span>Login</span>
+            </Link>
           </div>
 
           <div className="d-flex">
