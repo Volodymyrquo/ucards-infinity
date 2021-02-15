@@ -1,17 +1,57 @@
-import axios from "axios"
+import * as axios from "axios"
 import accessToken from "./jwt-token-access/accessToken"
+import basicToken from "./jwt-token-access/basicToken"
 
 //pass new generated access token here
 const token = accessToken
 
-//apply base url for axios
+/* //apply base url for axios
 const API_URL = ""
 
 const axiosApi = axios.create({
   baseURL: API_URL,
+}) */
+const instance = axios.create({
+  baseURL: `https://api.sumra.net`,
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded",
+    Authorization:
+      "Basic XzFvVjN1SlZVMHJ6TEVzMTVQdEdLT2RtcmxJYTpqQjIzbXVVN2FJa1JhN0tPRkNNMEh1VXA1U1Fh",
+  },
 })
 
-axiosApi.defaults.headers.common["Authorization"] = token
+export const fetchAuth = ({ username, password }) => {
+  const newData = new URLSearchParams({
+    username,
+    password,
+    grant_type: "password",
+  })
+
+  return instance.post(`/token`, newData).then(response => response)
+}
+
+export async function login({ username, password }) {
+  const resp = await fetch(`https://api.sumra.net/token`, {
+    method: "POST",
+    body: String(
+      new URLSearchParams({
+        username,
+        password,
+        grant_type: "password",
+      })
+    ),
+    headers: {
+      Authorization: `Basic XzFvVjN1SlZVMHJ6TEVzMTVQdEdLT2RtcmxJYTpqQjIzbXVVN2FJa1JhN0tPRkNNMEh1VXA1U1Fh`,
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  })
+
+  const data = await resp.json()
+
+  return data
+}
+
+/* axiosApi.defaults.headers.common["Authorization"] = token
 
 axiosApi.interceptors.response.use(
   response => response,
@@ -38,4 +78,4 @@ export async function del(url, config = {}) {
   return await axiosApi
     .delete(url, { ...config })
     .then(response => response.data)
-}
+} */
