@@ -12,7 +12,7 @@ import Dashboard from "../pages/Dashboard/index"
 
 //Pages
 import Cards from "../pages/Cards/Cards"
-import Contacts from "../pages/Contacts/Contacts"
+import Contacts from "../pages/ContactList/contacts-list"
 import Currencies from "../pages/Currencies/Currencies"
 import Requisites from "../pages/Requisites/Requisites"
 import Tariffs from "../pages/Tariffs/Tariffs"
