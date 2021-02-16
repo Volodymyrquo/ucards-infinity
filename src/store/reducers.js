@@ -31,8 +31,8 @@ import projects from "./projects/reducer"
 //tasks
 import tasks from "./tasks/reducer"
 
-//contacts
-import contacts from "./contacts/reducer"
+//users
+import usersPage from "./usersPage/reducer"
 
 const rootReducer = combineReducers({
   // public
@@ -49,7 +49,7 @@ const rootReducer = combineReducers({
   invoices,
   projects,
   tasks,
-  contacts,
+  usersPage,
 })
 
 export default rootReducer

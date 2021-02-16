@@ -28,5 +28,5 @@ export * from "./projects/actions"
 // tasks
 export * from "./tasks/actions"
 
-// contacts
-export * from "./contacts/actions"
+// users
+export * from "./usersPage/actions"

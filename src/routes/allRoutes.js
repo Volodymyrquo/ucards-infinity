@@ -16,7 +16,7 @@ import Contacts from "../pages/ContactList/contacts-list"
 import Currencies from "../pages/Currencies/Currencies"
 import Requisites from "../pages/Requisites/Requisites"
 import Tariffs from "../pages/Tariffs/Tariffs"
-import Users from "../pages/Users/Users"
+import Users from "../pages/UsersPage/UsersPage"
 import CardTypes from "../pages/CardsTypes/CardsTypes"
 import CryptoWallet from "../pages/Crypto/CryptoWallet/crypto-wallet"
 

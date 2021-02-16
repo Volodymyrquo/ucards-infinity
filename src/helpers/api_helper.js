@@ -19,7 +19,6 @@ const instance = axios.create({
       "Basic XzFvVjN1SlZVMHJ6TEVzMTVQdEdLT2RtcmxJYTpqQjIzbXVVN2FJa1JhN0tPRkNNMEh1VXA1U1Fh",
   },
 })
-
 export const fetchAuth = ({ username, password }) => {
   const newData = new URLSearchParams({
     username,
@@ -31,6 +30,37 @@ export const fetchAuth = ({ username, password }) => {
 }
 
 export async function login({ username, password }) {
+  const resp = await fetch(`https://api.sumra.net/auth/v1/meet/authenticate`, {
+    method: "POST",
+    body: JSON.stringify({ username, password }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+
+  const data = await resp.json()
+
+  return data
+}
+
+// fetch with base64 custom key and custom secret key
+/* 
+export const fetchAuth = ({ username, password }) => {
+  const newData = new URLSearchParams({
+    username,
+    password,
+    grant_type: "password",
+  })
+
+  return instance.post(`/token`, newData).then(response => response)
+}
+
+export async function login({ username, password }) {
+  var auth =
+    "Basic " +
+    Buffer.from(
+      "_1oV3uJVU0rzLEs15PtGKOdmrlIa:jB23muU7aIkRa7KOFCM0HuUp5SQa"
+    ).toString("base64")
   const resp = await fetch(`https://api.sumra.net/token`, {
     method: "POST",
     body: String(
@@ -41,7 +71,8 @@ export async function login({ username, password }) {
       })
     ),
     headers: {
-      Authorization: `Basic XzFvVjN1SlZVMHJ6TEVzMTVQdEdLT2RtcmxJYTpqQjIzbXVVN2FJa1JhN0tPRkNNMEh1VXA1U1Fh`,
+      Authorization: auth,
+
       "Content-Type": "application/x-www-form-urlencoded",
     },
   })
@@ -49,7 +80,7 @@ export async function login({ username, password }) {
   const data = await resp.json()
 
   return data
-}
+} */
 
 /* axiosApi.defaults.headers.common["Authorization"] = token
 

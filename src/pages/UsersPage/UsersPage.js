@@ -1,55 +1,30 @@
 import React, { useEffect, useState } from "react"
-import PropTypes from "prop-types"
-import { connect } from "react-redux"
-import { withRouter } from "react-router-dom"
-import { Card, CardBody, Col, Container, Row } from "reactstrap"
+import BootstrapTable from "react-bootstrap-table-next"
 import paginationFactory, {
   PaginationListStandalone,
   PaginationProvider,
+  PaginationTotalStandalone,
+  SizePerPageDropdownStandalone,
 } from "react-bootstrap-table2-paginator"
-import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit"
-import BootstrapTable from "react-bootstrap-table-next"
-
+import ToolkitProvider from "react-bootstrap-table2-toolkit"
+import { Card, CardBody, Col, Container, Row } from "reactstrap"
 //Import Breadcrumb
 import Breadcrumbs from "components/Common/Breadcrumb"
-
-import { getUsers } from "store/contacts/actions"
-import contactListColumns from "./contactListColumns"
+import { connect } from "react-redux"
+import { withRouter } from "react-router-dom"
+import usersListColumns from "./usersListColumns"
 import { isEmpty } from "lodash"
+import { getUsers } from "store/usersPage/actions"
 
-const ContactsList = props => {
-  const { users, onGetUsers } = props
-  const [userList, setUserList] = useState([])
-  const pageOptions = {
-    page: 1,
-    sizePerPage: 5,
-    totalSize: 100, // replace later with size(users),
+const UsersPage = ({ users, getUsers }) => {
+  const paginationOption = {
     custom: true,
+    totalSize: users.length,
+    sizePerPage: 5,
   }
-
   useEffect(() => {
-    onGetUsers()
-    setUserList(users)
-  }, [users, onGetUsers])
-
-  useEffect(() => {
-    if (!isEmpty(users)) {
-      setUserList(users)
-    }
-  }, [users])
-
-  // eslint-disable-next-line no-unused-vars
-  const handleTableChange = (type, { page, searchText }) => {
-    setUserList(
-      users.filter(user =>
-        Object.keys(user).some(
-          key =>
-            typeof user[key] === "string" &&
-            user[key].toLowerCase().includes(searchText.toLowerCase())
-        )
-      )
-    )
-  }
+    getUsers()
+  }, [getUsers])
 
   return (
     <React.Fragment>
@@ -62,13 +37,13 @@ const ContactsList = props => {
               <Card>
                 <CardBody>
                   <PaginationProvider
-                    pagination={paginationFactory(pageOptions)}
+                    pagination={paginationFactory(paginationOption)}
                   >
                     {({ paginationProps, paginationTableProps }) => (
                       <ToolkitProvider
                         keyField="id"
-                        data={userList || []}
-                        columns={contactListColumns()}
+                        data={users || []}
+                        columns={usersListColumns()}
                         bootstrap4
                         search
                       >
@@ -91,7 +66,6 @@ const ContactsList = props => {
                                     }
                                     headerWrapperClasses={"thead-light"}
                                     {...toolkitProps.baseProps}
-                                    onTableChange={handleTableChange}
                                     {...paginationTableProps}
                                   />
                                 </div>
@@ -119,20 +93,8 @@ const ContactsList = props => {
   )
 }
 
-ContactsList.propTypes = {
-  users: PropTypes.array,
-  onGetUsers: PropTypes.func,
-}
-
-const mapStateToProps = ({ contacts }) => ({
-  users: contacts.users,
+const mapStateToProps = ({ usersPage }) => ({
+  users: usersPage.users,
 })
 
-const mapDispatchToProps = dispatch => ({
-  onGetUsers: () => dispatch(getUsers()),
-})
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withRouter(ContactsList))
+export default connect(mapStateToProps, { getUsers })(withRouter(UsersPage))
