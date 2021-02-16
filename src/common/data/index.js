@@ -13,9 +13,9 @@ import {
   recentProducts,
   shops,
 } from "./ecommerce"
-import { chats, contacts, groups, messages } from "./chat"
+import { chats, groups, messages } from "./chat"
 import { calenderDefaultCategories, events } from "./calender"
-import { users, userProfile } from "./contacts"
+import { getUsers, getUserProfile } from "./contacts"
 
 export {
   productsData,
@@ -24,7 +24,6 @@ export {
   calenderDefaultCategories,
   chats,
   groups,
-  contacts,
   messages,
   orders,
   cartData,
@@ -37,6 +36,6 @@ export {
   invoiceList,
   projects,
   tasks,
-  users,
-  userProfile,
+  getUsers,
+  getUserProfile,
 }

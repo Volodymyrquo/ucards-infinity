@@ -170,13 +170,13 @@ const Header = props => {
 
             <div className="dropdown d-inline-block">
               <button className="btn header-item noti-icon waves-effect">
-                <i className="bx bx-bell " />
+                <i className="icon-Notification-Empty " />
                 <span className="badge badge-warning badge-pill">5</span>
               </button>
             </div>
             <div className="dropdown d-inline-block">
               <button className="btn header-item noti-icon waves-effect">
-                <i className="bx bx-envelope " />
+                <i className="icon-Mail " />
                 <span className="badge badge-warning badge-pill">5</span>
               </button>
             </div>

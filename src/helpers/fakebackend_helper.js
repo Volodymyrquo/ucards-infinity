@@ -1,4 +1,4 @@
-import axios from "axios"
+/* import axios from "axios"
 import { post, del, get, put } from "./api_helper"
 import * as url from "./url_helper"
 
@@ -93,8 +93,6 @@ const postJwtLogin = data => post(url.POST_FAKE_JWT_LOGIN, data)
 // postForgetPwd
 const postJwtForgetPwd = data => post(url.POST_FAKE_JWT_PASSWORD_FORGET, data)
 
-// postSocialLogin
-export const postSocialLogin = data => post(url.SOCIAL_LOGIN, data)
 
 // get Products
 export const getProducts = () => get(url.GET_PRODUCTS)
@@ -113,11 +111,11 @@ export const addNewEvent = event => post(url.ADD_NEW_EVENT, event)
 export const updateEvent = event => put(url.UPDATE_EVENT, event)
 
 // delete Event
-export const deleteEvent = event =>
+/* export const deleteEvent = event =>
   del(url.DELETE_EVENT, { headers: { event } })
-
+ */
 // get Categories
-export const getCategories = () => get(url.GET_CATEGORIES)
+/* export const getCategories = () => get(url.GET_CATEGORIES)
 
 // get chats
 export const getChats = () => get(url.GET_CHATS)
@@ -168,12 +166,12 @@ export const getProjectsDetails = id =>
   get(`${url.GET_PROJECT_DETAIL}/${id}`, { params: { id } })
 
 // get tasks
-export const getTasks = () => get(url.GET_TASKS)
-
+export const getTasks = () => get(url.GET_TASKS) 
+ */
 // get contacts
-export const getUsers = () => get(url.GET_USERS)
+/* export const getUsers = () => get(url.GET_USERS) */
 
-export const getUserProfile = () => get(url.GET_USER_PROFILE)
+/* export const getUserProfile = () => get(url.GET_USER_PROFILE)
 
 export {
   getLoggedInUser,
@@ -187,3 +185,4 @@ export {
   postJwtForgetPwd,
   postJwtProfile,
 }
+ */

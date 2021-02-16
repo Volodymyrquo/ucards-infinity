@@ -3,6 +3,7 @@ import person from "../../assets/images/sumra/icon-person.svg"
 import lock from "../../assets/images/sumra/icon-lock.svg"
 import logout from "../../assets/images/sumra/icon-logout.svg"
 import { connect } from "react-redux"
+import { getUserAccessToken } from "../../store/authSumra/actions"
 /* import { _signIn } from "../../redux/auth-reducer"
  */
 class LoginForm extends Component {
@@ -87,7 +88,7 @@ class LoginForm extends Component {
     if (this.state.username && this.state.password) {
       const { username, password } = this.state
 
-      this.props._signIn({ username, password })
+      this.props.getUserAccessToken({ username, password })
     }
   }
 
@@ -117,4 +118,4 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm
+export default connect(null, { getUserAccessToken })(LoginForm)

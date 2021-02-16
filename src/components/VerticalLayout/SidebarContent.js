@@ -75,27 +75,27 @@ const SidebarContent = props => {
         <ul className="metismenu list-unstyled" id="side-menu">
           <li>
             <Link to="/#" className="waves-effect">
-              <i className="bx bxs-tachometer"></i>
+              <i className="icon-Dashvoard"></i>
               <span>{props.t("Dashboard")}</span>
             </Link>
           </li>
 
           <li>
             <Link to="/cardtypes" className=" waves-effect">
-              <i className="bx bx-credit-card"></i>
+              <i className="icon-card"></i>
               <span>{props.t("Cards Types")}</span>
             </Link>
           </li>
 
           <li>
             <Link to="/cards" className="waves-effect">
-              <i className="bx bx-credit-card"></i>
+              <i className="icon-card"></i>
               <span>{props.t("Cards")}</span>
             </Link>
           </li>
           <li>
             <Link to="contacts" className="waves-effect">
-              <i className="bx bxs-contact"></i>
+              <i className="icon-People"></i>
               <span>{props.t("Contacts")}</span>
             </Link>
           </li>
@@ -108,7 +108,7 @@ const SidebarContent = props => {
 
           <li>
             <Link to="#" className="has-arrow waves-effect">
-              <i className="bx bx-transfer-alt"></i>
+              <i className="icon-Trade"></i>
               <span>{props.t("Operations")}</span>
             </Link>
             <ul className="sub-menu" aria-expanded="false">
@@ -125,25 +125,25 @@ const SidebarContent = props => {
           </li>
           <li>
             <Link to="/requisites" className="waves-effect">
-              <i className="bx bx-list-ul"></i>
+              <i className="icon-List"></i>
               <span>{props.t("Requisites")}</span>
             </Link>
           </li>
           <li>
-            <Link to="/tariffs" className="waves-effect">
-              <i className="bx bx-food-menu"></i>
+            <Link to="/auth" className="waves-effect">
+              <i className="icon-Clipboard"></i>
               <span>{props.t("Tariffs")}</span>
             </Link>
           </li>
           <li>
             <Link to="/users" className="waves-effect">
-              <i className="bx bx-user"></i>
+              <i className="icon-Man"></i>
               <span>{props.t("Users")}</span>
             </Link>
           </li>
           <li>
             <Link to="/crypto-wallet" className="waves-effect">
-              <i className="bx bx-user"></i>
+              <i className="icon-Chat"></i>
               <span>{props.t("Crypto")}</span>
             </Link>
           </li>

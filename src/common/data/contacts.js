@@ -1,4 +1,4 @@
-const users = [
+const getUsers = () => [
   {
     id: 1,
     name: "David McHenry",
@@ -227,7 +227,7 @@ const users = [
   },
 ]
 
-const userProfile = {
+const getUserProfile = () => ({
   id: 1,
   name: "Cynthia Price",
   designation: "UI/UX Designer",
@@ -313,6 +313,6 @@ const userProfile = {
       budget: "$94",
     },
   ],
-}
+})
 
-export { users, userProfile }
+export { getUsers, getUserProfile }
