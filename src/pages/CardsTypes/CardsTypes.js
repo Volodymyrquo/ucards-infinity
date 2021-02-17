@@ -7,12 +7,12 @@ import paginationFactory, {
 import ToolkitProvider from "react-bootstrap-table2-toolkit"
 import { Card, CardBody, Col, Container, Row } from "reactstrap"
 //Import Breadcrumb
-import Breadcrumbs from "components/Common/Breadcrumb"
+import Breadcrumbs from "../../components/Common/Breadcrumb"
 import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
 import cardTypesListColumns from "./cardTypesListColumns"
 import { isEmpty } from "lodash"
-import { getCardsTypes } from "store/cardsTypes/actions"
+import { getCardsTypes } from "../../store/cardsTypes/actions"
 
 const CardsTypes = ({ types, getCardsTypes }) => {
   const paginationOption = {

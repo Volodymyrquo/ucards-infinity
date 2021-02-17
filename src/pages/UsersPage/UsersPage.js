@@ -9,12 +9,12 @@ import paginationFactory, {
 import ToolkitProvider from "react-bootstrap-table2-toolkit"
 import { Card, CardBody, Col, Container, Row } from "reactstrap"
 //Import Breadcrumb
-import Breadcrumbs from "components/Common/Breadcrumb"
+import Breadcrumbs from "../../components/Common/Breadcrumb"
 import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
 import usersListColumns from "./usersListColumns"
 import { isEmpty } from "lodash"
-import { getUsers } from "store/usersPage/actions"
+import { getUsers } from "../../store/usersPage/actions"
 
 const UsersPage = ({ users, getUsers }) => {
   const paginationOption = {
