@@ -26,10 +26,10 @@ export const fetchAuth = ({ username, password }) => {
     grant_type: "password",
   })
 
-  return instance.post(`/token`, newData).then(response => response)
+  return instance.post(`/token`, newData).then(response => response.data)
 }
 
-export async function login({ username, password }) {
+/* export async function login({ username, password }) {
   const resp = await fetch(`https://api.sumra.net/auth/v1/meet/authenticate`, {
     method: "POST",
     body: JSON.stringify({ username, password }),
@@ -42,10 +42,10 @@ export async function login({ username, password }) {
 
   return data
 }
-
+ */
 // fetch with base64 custom key and custom secret key
-/* 
-export const fetchAuth = ({ username, password }) => {
+
+/* export const fetchAuth = ({ username, password }) => {
   const newData = new URLSearchParams({
     username,
     password,
@@ -53,7 +53,7 @@ export const fetchAuth = ({ username, password }) => {
   })
 
   return instance.post(`/token`, newData).then(response => response)
-}
+} */
 
 export async function login({ username, password }) {
   var auth =
@@ -80,7 +80,7 @@ export async function login({ username, password }) {
   const data = await resp.json()
 
   return data
-} */
+}
 
 /* axiosApi.defaults.headers.common["Authorization"] = token
 

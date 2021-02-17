@@ -11,8 +11,8 @@ class LoginForm extends Component {
     super(props)
 
     this.state = {
-      username: "SumraEduard",
-      password: "VvN1zRx16H",
+      username: "VOLODYMYRB",
+      password: "vSi0PcykN5",
     }
   }
 

@@ -16,6 +16,7 @@ import {
 import { chats, groups, messages } from "./chat"
 import { calenderDefaultCategories, events } from "./calender"
 import { getUsers, getUserProfile } from "./contacts"
+import { getCardsTypes } from "./cardsTypes"
 
 export {
   productsData,
@@ -38,4 +39,5 @@ export {
   tasks,
   getUsers,
   getUserProfile,
+  getCardsTypes,
 }

@@ -54,7 +54,7 @@ const App = props => {
               layout={Layout}
               component={route.component}
               key={idx}
-              isAuthProtected={false}
+              isAuthProtected={true}
               exact
             />
           ))}
