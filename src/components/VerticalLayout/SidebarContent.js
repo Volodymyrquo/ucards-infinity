@@ -141,12 +141,6 @@ const SidebarContent = props => {
               <span>{props.t("Users")}</span>
             </Link>
           </li>
-          <li>
-            <Link to="/crypto-wallet" className="waves-effect">
-              <i className="icon-Chat"></i>
-              <span>{props.t("Crypto")}</span>
-            </Link>
-          </li>
         </ul>
       </div>
     </React.Fragment>

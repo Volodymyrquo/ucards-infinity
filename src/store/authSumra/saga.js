@@ -8,7 +8,6 @@ import {
   GET_USER_NAME,
 } from "./actionTypes"
 import { setUserAccessToken, setUserName } from "./actions"
-import { apiError } from "../auth/login/actions"
 //Include Both Helper File with needed methods
 import { fetchAuth, login } from "../../helpers/api_helper"
 
