@@ -15,6 +15,7 @@ import invoiceSaga from "./invoices/saga"
 import projectsSaga from "./projects/saga"
 import tasksSaga from "./tasks/saga"
 import usersSaga from "./usersPage/saga"
+import cardsTypesSaga from "./cardsTypes/saga"
 
 export default function* rootSaga() {
   yield all([
@@ -33,5 +34,6 @@ export default function* rootSaga() {
     fork(projectsSaga),
     fork(tasksSaga),
     fork(usersSaga),
+    fork(cardsTypesSaga),
   ])
 }

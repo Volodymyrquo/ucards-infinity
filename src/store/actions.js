@@ -30,3 +30,6 @@ export * from "./tasks/actions"
 
 // users
 export * from "./usersPage/actions"
+
+// cards types
+export * from "./cardsTypes/actions"

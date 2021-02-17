@@ -3,8 +3,6 @@ import BootstrapTable from "react-bootstrap-table-next"
 import paginationFactory, {
   PaginationListStandalone,
   PaginationProvider,
-  PaginationTotalStandalone,
-  SizePerPageDropdownStandalone,
 } from "react-bootstrap-table2-paginator"
 import ToolkitProvider from "react-bootstrap-table2-toolkit"
 import { Card, CardBody, Col, Container, Row } from "reactstrap"
@@ -12,26 +10,26 @@ import { Card, CardBody, Col, Container, Row } from "reactstrap"
 import Breadcrumbs from "components/Common/Breadcrumb"
 import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
-import usersListColumns from "./cardTypesListColumns"
+import cardTypesListColumns from "./cardTypesListColumns"
 import { isEmpty } from "lodash"
-import { getUsers } from "store/usersPage/actions"
+import { getCardsTypes } from "store/cardsTypes/actions"
 
-const CardsTypes = ({ users, getUsers }) => {
+const CardsTypes = ({ types, getCardsTypes }) => {
   const paginationOption = {
     custom: true,
-    totalSize: users.length,
+    totalSize: types.length,
     sizePerPage: 5,
   }
   useEffect(() => {
-    getUsers()
-  }, [getUsers])
+    getCardsTypes()
+  }, [getCardsTypes])
 
   return (
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumbs */}
-          <Breadcrumbs title="Contacts" breadcrumbItem="Users" />
+          <Breadcrumbs title="Card Types" breadcrumbItem="Types" />
           <Row>
             <Col lg="12">
               <Card>
@@ -42,8 +40,8 @@ const CardsTypes = ({ users, getUsers }) => {
                     {({ paginationProps, paginationTableProps }) => (
                       <ToolkitProvider
                         keyField="id"
-                        data={users || []}
-                        columns={usersListColumns()}
+                        data={types || []}
+                        columns={cardTypesListColumns()}
                         bootstrap4
                         search
                       >
@@ -93,8 +91,10 @@ const CardsTypes = ({ users, getUsers }) => {
   )
 }
 
-const mapStateToProps = ({ usersPage }) => ({
-  users: usersPage.users,
+const mapStateToProps = ({ cardsTypes }) => ({
+  types: cardsTypes.types,
 })
 
-export default connect(mapStateToProps, { getUsers })(withRouter(CardsTypes))
+export default connect(mapStateToProps, { getCardsTypes })(
+  withRouter(CardsTypes)
+)

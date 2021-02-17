@@ -1,7 +1,7 @@
 import { GET_CARDS_TYPES_SUCCESS, GET_CARDS_TYPES_FAIL } from "./actionTypes"
 
 const INIT_STATE = {
-  cardTypes: [],
+  types: [],
   error: {},
 }
 
@@ -10,7 +10,7 @@ const cardTypes = (state = INIT_STATE, action) => {
     case GET_CARDS_TYPES_SUCCESS:
       return {
         ...state,
-        cardTypes: action.payload,
+        types: action.payload,
       }
 
     case GET_CARDS_TYPES_FAIL:

@@ -34,6 +34,9 @@ import tasks from "./tasks/reducer"
 //users
 import usersPage from "./usersPage/reducer"
 
+//cards types
+import cardsTypes from "./cardsTypes/reducer"
+
 const rootReducer = combineReducers({
   // public
   Layout,
@@ -50,6 +53,7 @@ const rootReducer = combineReducers({
   projects,
   tasks,
   usersPage,
+  cardsTypes,
 })
 
 export default rootReducer

@@ -3,7 +3,7 @@ import { UncontrolledTooltip } from "reactstrap"
 import { Link } from "react-router-dom"
 import images from "assets/images"
 
-const usersListColumns = () => [
+const cardsTypesListColumns = () => [
   {
     dataField: "img",
     text: "#",
@@ -70,4 +70,4 @@ const usersListColumns = () => [
   },
 ]
 
-export default usersListColumns
+export default cardsTypesListColumns

@@ -13,7 +13,7 @@ export const getCardsTypesSuccess = cardTypes => ({
   payload: cardTypes,
 })
 
-export const getUsersFail = error => ({
+export const getCardsTypesFail = error => ({
   type: GET_CARDS_TYPES_FAIL,
   payload: error,
 })
