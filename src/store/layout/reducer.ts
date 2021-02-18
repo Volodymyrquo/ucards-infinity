@@ -10,6 +10,10 @@ import {
   TOGGLE_LEFTMENU,
   SHOW_SIDEBAR,
 } from "./actionTypes"
+import { ActionType} from "./actions";
+
+export type INIT_STATE_TYPE = typeof INIT_STATE;
+
 
 const INIT_STATE = {
   layoutType: "vertical",
@@ -24,7 +28,7 @@ const INIT_STATE = {
   leftMenu: false,
 }
 
-const Layout = (state = INIT_STATE, action) => {
+const Layout = (state = INIT_STATE, action:ActionType):INIT_STATE_TYPE => {
   switch (action.type) {
     case CHANGE_LAYOUT:
       return {

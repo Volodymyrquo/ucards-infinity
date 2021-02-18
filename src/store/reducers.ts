@@ -20,4 +20,8 @@ const rootReducer = combineReducers({
   cardsTypes,
 })
 
+type RootReducerType = typeof rootReducer;
+export type AppStateType = ReturnType<RootReducerType>;
+
+
 export default rootReducer

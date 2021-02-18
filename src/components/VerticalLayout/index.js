@@ -14,7 +14,6 @@ import {
 // Layout Related Components
 import Header from "./Header"
 import Sidebar from "./Sidebar"
-import Footer from "./Footer"
 import Rightbar from "../CommonForBoth/Rightbar"
 
 class Layout extends Component {
@@ -48,8 +47,7 @@ class Layout extends Component {
     window.scrollTo(0, 0)
     let currentage = this.capitalizeFirstLetter(this.props.location.pathname)
 
-    document.title =
-      currentage + " | Skote - Responsive Bootstrap 4 Admin Dashboard"
+    document.title = currentage + " | Ulta Cards Infinity"
     if (this.props.leftSideBarTheme) {
       this.props.changeSidebarTheme(this.props.leftSideBarTheme)
     }

@@ -6,7 +6,7 @@ const Dashboard = props => {
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
-          <h4>Dashboard</h4>
+          <h1>Hello from Dashboard...</h1>
         </Container>
       </div>
     </React.Fragment>

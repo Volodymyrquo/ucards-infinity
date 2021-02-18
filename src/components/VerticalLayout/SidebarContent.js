@@ -74,14 +74,14 @@ const SidebarContent = props => {
       <div id="sidebar-menu">
         <ul className="metismenu list-unstyled" id="side-menu">
           <li>
-            <Link to="/#" className="waves-effect">
+            <Link to="/" className="waves-effect">
               <i className="icon-Dashboard"></i>
               <span>{props.t("Dashboard")}</span>
             </Link>
           </li>
 
           <li>
-            <Link to="/cardtypes" className=" waves-effect">
+            <Link to="/cardtypes" className="waves-effect">
               <i className="icon-card"></i>
               <span>{props.t("Cards Types")}</span>
             </Link>
@@ -130,7 +130,7 @@ const SidebarContent = props => {
             </Link>
           </li>
           <li>
-            <Link to="/auth" className="waves-effect">
+            <Link to="/tariffs" className="waves-effect">
               <i className="icon-Clipboard"></i>
               <span>{props.t("Tariffs")}</span>
             </Link>
