@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect} from "react"
 import BootstrapTable from "react-bootstrap-table-next"
 import paginationFactory, {
   PaginationListStandalone,
@@ -11,7 +11,6 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
 import cardTypesListColumns from "./cardTypesListColumns"
-import { isEmpty } from "lodash"
 import { GetCardsTypessActionType, getCardsTypes } from "../../store/cardsTypes/actions"
 import { AppStateType } from "../../store/reducers";
 

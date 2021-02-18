@@ -1,15 +1,10 @@
 import { takeEvery, put, call } from "redux-saga/effects"
 
 // Calender Redux States
-import {
-  SET_USER_ACCESS_TOKEN,
-  SET_USER_NAME,
-  GET_USER_ACCESS_TOKEN,
-  GET_USER_NAME,
-} from "./actionTypes"
-import { setUserAccessToken, setUserName } from "./actions"
+import { GET_USER_ACCESS_TOKEN } from "./actionTypes"
+import { setUserAccessToken } from "./actions"
 //Include Both Helper File with needed methods
-import { fetchAuth, login } from "../../helpers/api_helper"
+import { fetchAuth } from "../../helpers/api_helper"
 
 //wokers
 function* signIn({ payload: { username, password } }) {

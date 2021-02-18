@@ -7,12 +7,12 @@ import {
   GET_USERS_SUCCESS,
 } from "./actionTypes"
 
-type GetUsersActionType = { type: typeof GET_USERS};
-type GetUsersSuccessActionType = { type: typeof GET_USERS_SUCCESS, payload: Array<any>,} ;
-type GetUsersFailActionType = { type: typeof GET_USERS_FAIL, payload: any,} ;
-type GetUserProfileActionType = { type: typeof GET_USER_PROFILE};
-type GetUserProfileSuccessActionType = { type: typeof GET_USER_PROFILE_SUCCESS, payload: Array<any>,} ;
-type GetUserProfileFailActionType = { type: typeof GET_USER_PROFILE_FAIL, payload: any,} ;
+export type GetUsersActionType = { type: typeof GET_USERS};
+export type GetUsersSuccessActionType = { type: typeof GET_USERS_SUCCESS, payload: Array<any>,} ;
+export type GetUsersFailActionType = { type: typeof GET_USERS_FAIL, payload: any,} ;
+export type GetUserProfileActionType = { type: typeof GET_USER_PROFILE};
+export type GetUserProfileSuccessActionType = { type: typeof GET_USER_PROFILE_SUCCESS, payload: Array<any>,} ;
+export type GetUserProfileFailActionType = { type: typeof GET_USER_PROFILE_FAIL, payload: any,} ;
 
 export type ActionType = GetUsersActionType | GetUsersSuccessActionType | GetUsersFailActionType | GetUserProfileActionType | GetUserProfileSuccessActionType | GetUserProfileFailActionType
 
