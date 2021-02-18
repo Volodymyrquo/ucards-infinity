@@ -1,35 +1,35 @@
-import React, { Component } from 'react';
-import { FirstForm } from './FirstForm';
-import { ConfirmForm } from './ConfirmForm';
-import { UserForm } from './UserForm';
-import LoginForm from './LoginForm';
-import './AuthPage.scss';
+import React, { Component } from "react"
+import { FirstForm } from "./FirstForm"
+import { ConfirmForm } from "./ConfirmForm"
+import { UserForm } from "./UserForm"
+import LoginForm from "./LoginForm"
+import "./AuthPage.scss"
 
 export default class AuthPage extends Component {
   static defaultProps = {
-    className: 'authentification-form',
-  };
+    className: "authentification-form",
+  }
 
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       ...this.state,
 
       currentStep: 1,
-      verificationCode: '',
-    };
+      verificationCode: "",
+    }
 
-    this._goToStep = this._goToStep.bind(this);
-    this._onSetVerificationCode = this._onSetVerificationCode.bind(this);
+    this._goToStep = this._goToStep.bind(this)
+    this._onSetVerificationCode = this._onSetVerificationCode.bind(this)
   }
 
   render() {
-    const { className } = this.props;
+    const { className } = this.props
     const getForm = () => {
       switch (this.state.currentStep) {
         case 1:
-          return <FirstForm className={className} onStep={this._goToStep} />;
+          return <FirstForm className={className} onStep={this._goToStep} />
         case 2:
           return (
             <ConfirmForm
@@ -37,33 +37,33 @@ export default class AuthPage extends Component {
               onStep={this._goToStep}
               onSetCode={this._onSetVerificationCode}
             />
-          );
+          )
         case 3:
-          return <UserForm className={className} state={this.state} />;
+          return <UserForm className={className} state={this.state} />
         case 4:
-          return <LoginForm className={className} onStep={this._goToStep} />;
+          return <LoginForm className={className} onStep={this._goToStep} />
         default:
-          break;
+          break
       }
-    };
-    const step = getForm();
+    }
+    const step = getForm()
 
     return (
       <>
-        <header className='sumra-header'>
-          <div className='logotype'></div>
+        <header className="sumra-header">
+          <div className="logotype"></div>
         </header>
-        <main className='sumra-main'>{step}</main>
-        <footer className='sumra-footer'></footer>
+        <main className="sumra-main">{step}</main>
+        <footer className="sumra-footer"></footer>
       </>
-    );
+    )
   }
 
   _goToStep(value) {
-    this.setState({ currentStep: value });
+    this.setState({ currentStep: value })
   }
 
   _onSetVerificationCode(code) {
-    this.setState({ verificationCode: code.toUpperCase() });
+    this.setState({ verificationCode: code.toUpperCase() })
   }
 }

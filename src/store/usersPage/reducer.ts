@@ -5,13 +5,18 @@ import {
   GET_USER_PROFILE_FAIL,
 } from "./actionTypes"
 
+import { ActionType } from "./actions";
+
+export type INIT_STATE_TYPE = typeof INIT_STATE;
+
+
 const INIT_STATE = {
   users: [],
   userProfile: {},
   error: {},
 }
 
-const usersPage = (state = INIT_STATE, action) => {
+const usersPage = (state = INIT_STATE, action:ActionType):INIT_STATE_TYPE => {
   switch (action.type) {
     case GET_USERS_SUCCESS:
       return {

@@ -1,15 +1,31 @@
 {
   "rules": {
-    "no-undef": "off"
+    "no-undef": "off",
+    "react/prop-types": "off",
+    "react/display-name": "off"
   },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true,
-      "modules": true,
-      "experimentalObjectRestSpread": true
-    }
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+],
+"plugins": [
+  "@typescript-eslint"
+],
+"settings": {
+  "react": {
+      "pragma": "React",
+      "version": "detect",
+      "flowVersion": "0.53"
   }
+},
+"overrides": [
+  {
+      "files": ["*.js", "*.jsx"],
+      "rules": {
+          "@typescript-eslint/explicit-function-return-type": "off"
+      }
+  }
+]
 }
