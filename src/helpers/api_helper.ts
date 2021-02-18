@@ -1,7 +1,7 @@
-import * as axios from "axios"
+import axios from "axios"
 import accessToken from "./jwt-token-access/accessToken"
 import basicToken from "./jwt-token-access/basicToken"
-
+import { GetUserAccessTokenType } from "../store/authSumra/actions";
 //pass new generated access token here
 const token = accessToken
 
@@ -19,7 +19,7 @@ const instance = axios.create({
       "Basic XzFvVjN1SlZVMHJ6TEVzMTVQdEdLT2RtcmxJYTpqQjIzbXVVN2FJa1JhN0tPRkNNMEh1VXA1U1Fh",
   },
 })
-export const fetchAuth = ({ username, password }) => {
+export const fetchAuth = ({ username, password }:GetUserAccessTokenType) => {
   const newData = new URLSearchParams({
     username,
     password,
@@ -55,7 +55,7 @@ export const fetchAuth = ({ username, password }) => {
   return instance.post(`/token`, newData).then(response => response)
 } */
 
-export async function login({ username, password }) {
+/* export async function login({ username, password }) {
   var auth =
     "Basic " +
     Buffer.from(
@@ -81,7 +81,7 @@ export async function login({ username, password }) {
 
   return data
 }
-
+ */
 /* axiosApi.defaults.headers.common["Authorization"] = token
 
 axiosApi.interceptors.response.use(

@@ -12,9 +12,19 @@ import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
 import cardTypesListColumns from "./cardTypesListColumns"
 import { isEmpty } from "lodash"
-import { getCardsTypes } from "../../store/cardsTypes/actions"
+import { GetCardsTypessActionType, getCardsTypes } from "../../store/cardsTypes/actions"
+import { AppStateType } from "../../store/reducers";
 
-const CardsTypes = ({ types, getCardsTypes }) => {
+
+type MapStateToPropsType = {
+  types: Array<any>
+}
+type MapDispatchToPropsType = {
+  getCardsTypes: ()=>GetCardsTypessActionType
+}
+type PropsType = MapStateToPropsType & MapDispatchToPropsType
+
+const CardsTypes:React.FC<PropsType> = ({ types, getCardsTypes }) => {
   const paginationOption = {
     custom: true,
     totalSize: types.length,
@@ -91,10 +101,11 @@ const CardsTypes = ({ types, getCardsTypes }) => {
   )
 }
 
-const mapStateToProps = ({ cardsTypes }) => ({
-  types: cardsTypes.types,
+const mapStateToProps = (state:AppStateType):MapStateToPropsType => ({
+  types: state.cardsTypes.types,
 })
 
-export default connect(mapStateToProps, { getCardsTypes })(
+
+export default connect<MapStateToPropsType, MapDispatchToPropsType,AppStateType>(mapStateToProps, {getCardsTypes})(
   withRouter(CardsTypes)
 )

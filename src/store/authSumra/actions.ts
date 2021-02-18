@@ -10,7 +10,7 @@ type SetUserAccessTokenActionType = {
   payload: string
 }
 type SetUserNameActionType = {type: typeof SET_USER_NAME; payload: string}
-type GetUserAccessTokenType = {username:string;password:string}
+export type GetUserAccessTokenType = {username:string;password:string}
 type GetUserAccessTokenActionType = {type: typeof GET_USER_ACCESS_TOKEN;  payload: GetUserAccessTokenType}
 type GetUserNameActionType = { type: typeof GET_USER_NAME }
 

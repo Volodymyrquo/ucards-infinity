@@ -5,9 +5,9 @@ import {
 } from "./actionTypes"
 
 
-type GetCardsTypessActionType = { type: typeof GET_CARDS_TYPES};
-type GetCardsTypesSuccessActionType = { type: typeof GET_CARDS_TYPES_SUCCESS; payload:Array<any> };
-type GetCardsTypesFailActionType = { type: typeof GET_CARDS_TYPES_FAIL; payload:any};
+export type GetCardsTypessActionType = { type: typeof GET_CARDS_TYPES};
+export type GetCardsTypesSuccessActionType = { type: typeof GET_CARDS_TYPES_SUCCESS; payload:Array<any> };
+export type GetCardsTypesFailActionType = { type: typeof GET_CARDS_TYPES_FAIL; payload:any};
 
 
 export type ActionType = GetCardsTypessActionType |GetCardsTypesSuccessActionType |GetCardsTypesFailActionType
